@@ -115,7 +115,7 @@ exports.sendAllGeneric = function(senderId,res,FACEBOOK_ACCESS_TOKEN){
 
     
   
-exports.sendGenericProduct = function(senderId,str,FACEBOOK_ACCESS_TOKEN){
+exports.sendGenericProduct = function(senderId,intent, param,FACEBOOK_ACCESS_TOKEN){
     var card = {
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token: FACEBOOK_ACCESS_TOKEN},
@@ -139,7 +139,7 @@ exports.sendGenericProduct = function(senderId,str,FACEBOOK_ACCESS_TOKEN){
 
         mongo.connect(url, function(err, db) {
     assert.equal(null, err);
-    var cursor = db.collection(str.metadata.intentName).find({title:str.parameters.PizzaType});
+    var cursor = db.collection(intent).find({title:param});
     cursor.forEach(function(doc, err) {
       assert.equal(null, err);
       

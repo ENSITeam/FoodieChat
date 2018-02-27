@@ -413,7 +413,7 @@ class FacebookBot {
             else {
                 global.str = response.result;
                // console.log(str);
-                product.sendGenericProduct(sender,str,FB_PAGE_ACCESS_TOKEN);
+                product.sendGenericProduct(sender,str.metadata.intentName, str.parameters.PizzaType,FB_PAGE_ACCESS_TOKEN);
             }
         }
 
@@ -427,7 +427,7 @@ class FacebookBot {
             else {
                 global.str = response.result;
                // console.log(str);
-                product.sendGenericProduct(sender,str,FB_PAGE_ACCESS_TOKEN);
+                product.sendGenericProduct(sender,str.metadata.intentName, str.parameters.boissontype,FB_PAGE_ACCESS_TOKEN);
             }
         }
            if (response.result.metadata.intentName === 'PetitDej'){
@@ -438,7 +438,7 @@ class FacebookBot {
             else {
                 global.str = response.result;
                // console.log(str);
-                product.sendGenericProduct(sender,str,FB_PAGE_ACCESS_TOKEN);
+                product.sendGenericProduct(sender,str.metadata.intentName, str.parameters.Petitdejtype,FB_PAGE_ACCESS_TOKEN);
             }
         }
             if (response.result.metadata.intentName === 'Crepe'){
@@ -449,7 +449,7 @@ class FacebookBot {
             else {
                 global.str = response.result;
                // console.log(str);
-                product.sendGenericProduct(sender,str,FB_PAGE_ACCESS_TOKEN);
+                product.sendGenericProduct(sender,str.metadata.intentName, str.parameters.Crepetype,FB_PAGE_ACCESS_TOKEN);
             }
         }
                if (response.result.metadata.intentName === 'Gaufre'){
@@ -460,7 +460,7 @@ class FacebookBot {
             else {
                 global.str = response.result;
                // console.log(str);
-                product.sendGenericProduct(sender,str,FB_PAGE_ACCESS_TOKEN);
+                product.sendGenericProduct(sender,str.metadata.intentName, str.parameters.Gaufretype,FB_PAGE_ACCESS_TOKEN);
             }
         }
                if (response.result.metadata.intentName === 'sandwich'){
@@ -471,7 +471,7 @@ class FacebookBot {
             else {
                 global.str = response.result;
                // console.log(str);
-                product.sendGenericProduct(sender,str,FB_PAGE_ACCESS_TOKEN);
+                product.sendGenericProduct(sender,str.metadata.intentName, str.parameters.sandwichType,FB_PAGE_ACCESS_TOKEN);
             }
         } //Ajouter la même structure avec le nom de votre produit. LES NOMS DOIVENT ÊTRE EXACTEMENT COMME LES INTENTS ET LES ENTITIES
         else if (response.result.metadata.intentName === 'Patron'){
